@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('populations', function (Blueprint $table) {
             $table->id();
             $table->integer('year')->nullable();
-            $table->unsignedFloat('value')->nullable();
+            $table->unsignedFloat('value', 16 , 3)->nullable();
             $table->string('sex');
             $table->text('reliabilty');
             $table->foreignId('city_id')->constrained('cities')->restrictOnDelete();
